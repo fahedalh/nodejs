@@ -1,0 +1,16 @@
+{
+  "name": "polygon-supply",
+  "private": true,
+  "version": "1.0.0",
+  "description": "3D merch store built with React, Three.js (react-three-fiber) and a Node.js/Express API",
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "concurrently -n api,web -c yellow,cyan \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "NODE_ENV=production npm start -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "engines": { "node": ">=18" }
+}
