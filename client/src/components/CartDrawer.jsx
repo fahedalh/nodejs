@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { api } from '../api.js';
+import { api, isStatic } from '../api.js';
 import { useCart } from '../cart.jsx';
 
 export default function CartDrawer({ products, shipping }) {
@@ -117,7 +117,7 @@ export default function CartDrawer({ products, shipping }) {
                     Email
                     <input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} autoComplete="email" />
                   </label>
-                  <p className="muted small-print">Demo store — orders are saved by the Node API, no payment is taken.</p>
+                  <p className="muted small-print">{isStatic ? 'Preview build — nothing is sent or charged.' : 'Demo store — orders are saved by the Node API, no payment is taken.'}</p>
                 </form>
               )}
             </div>
